@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 
 import 'custom_widgets/album_actions.dart';
 
@@ -29,17 +28,22 @@ class _MySuperAwesomeAppState extends State<MySuperAwesomeApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-      appBar: AppBar(
-        title: Text('Our Fetch App'),
-      ),
-      body: Center(
-       child: FutureBuilder<Album>(
-         future: futureAlbum, // this accepts our async result
-         builder: (context, snapshot) {
-           
-         },), 
-      )
-    ));
+            appBar: AppBar(
+              title: Text('Our Fetch App'),
+            ),
+            body: Center(
+              child: FutureBuilder<Album>(
+                future: futureAlbum, // this accepts our async result
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return Text(snapshot.data!.title);
+                  } else if (snapshot.hasError) {
+                    return Text("${snapshot.error}");
+                  }
+
+                  return CircularProgressIndicator();
+                },
+              ),
+            )));
   }
 }
-
