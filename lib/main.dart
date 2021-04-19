@@ -3,20 +3,20 @@ import 'package:flutter/material.dart';
 import 'custom_widgets/album_actions.dart';
 
 void main() {
-  runApp(MySuperAwesomeApp());
+  runApp(MyApp());
 }
 
-class MySuperAwesomeApp extends StatefulWidget {
+class MyApp extends StatefulWidget {
   @override
-  _MySuperAwesomeAppState createState() => _MySuperAwesomeAppState();
+  _MyAppState createState() => _MyAppState();
 }
 
-class _MySuperAwesomeAppState extends State<MySuperAwesomeApp> {
+class _MyAppState extends State<MyApp> {
   /* 
   This bypasses Flutter's null safety and lazy loads until its called again.
   For some reason, late keyword throws when used.  
   */
-  Future<Album> futureAlbum;
+  late Future<Album> futureAlbum;
 
   @override
   void initState() {
