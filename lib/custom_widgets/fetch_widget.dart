@@ -9,7 +9,7 @@ Future<Album> fetchAlbum() async {
   if (response.statusCode == 200) {
     return Album.fromJson(jsonDecode(response.body));
   } else {
-    throw Exception("Failed to load album")
+    throw Exception("Failed to load album");
   }
 }
 
@@ -19,7 +19,7 @@ class Album {
   final String title;
 
   Album(this.userId, this.id, this.title);
-
+  /* Test a refactored version that doesn't require use of the factory keyword */
   factory Album.fromJson(Map<String, dynamic> json) {
     return new Album(json['userId'], json['id'], json['title']);
   }
