@@ -7,6 +7,14 @@ Future<Album> fetchAlbum() async {
       await http.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
 
   if (response.statusCode == 200) {
+    /**
+     * An alternative to creating an instance with the response and omitting #fromJson from Album
+     * Map<String, dynamic> decodedJson = jsonDecode(response.body)
+     * 
+     * int resUserId = decodedJson['userId']
+     * int resId = decodedJson['id']
+     * String resTitle = decodedJson['title']
+     */
     return Album.fromJson(jsonDecode(response.body));
   } else {
     throw Exception("Failed to load album");
