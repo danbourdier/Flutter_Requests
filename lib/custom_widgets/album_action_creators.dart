@@ -1,7 +1,7 @@
 import 'dart:convert';
-
 import 'package:http/http.dart' as http;
 
+// This is a async method to fetch/get our resources (Album)
 Future<Album> fetchAlbum() async {
   final response =
       await http.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
@@ -13,6 +13,7 @@ Future<Album> fetchAlbum() async {
   }
 }
 
+// This constructs our instance of Album to use.
 class Album {
   final int userId;
   final int id;
