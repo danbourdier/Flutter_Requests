@@ -5,11 +5,12 @@ void main() {
   runApp(MySuperAwesomeApp());
 }
 
-Future<http.Response> fetchAlbum() {
-  return http.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
+class MySuperAwesomeApp extends StatefulWidget {
+  @override
+  _MySuperAwesomeAppState createState() => _MySuperAwesomeAppState();
 }
 
-class MySuperAwesomeApp extends StatelessWidget {
+class _MySuperAwesomeAppState extends State<MySuperAwesomeApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,4 +22,3 @@ class MySuperAwesomeApp extends StatelessWidget {
     ));
   }
 }
-
