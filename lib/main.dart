@@ -7,7 +7,7 @@ void main() {
 class MySuperAwesomeApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Scaffold(
+    return Scaffold(
       appBar: AppBar(
         title: Text('Our Fetch App'),
       ),
