@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 // This is a async method to fetch/get our resources (Album)
@@ -33,3 +34,4 @@ class Album {
     return new Album(json['userId'], json['id'], json['title']);
   }
 }
+
