@@ -35,6 +35,8 @@ class _MyAppState extends State<MyApp> {
               title: Text('Our Fetch App'),
             ),
             body: Center(
+              // To test different endpoints, just switch any mention of Album class
+              // and respective variables with User class data.
               child: FutureBuilder<Album>(
                 future: futureAlbum, // this accepts our async result
                 builder: (context, snapshot) {
