@@ -17,7 +17,8 @@ Future<List<User>> fetchUsers() async {
 
 // create a function that accepts a deserialized List of objects and returns a mapped list of
 // user instances.
-List<User> sanitizeUsers(List<Map<String, dynamic>> users) {
+// List<User> sanitizeUsers(List<Map<String, dynamic>> users) {
+List<User> sanitizeUsers(List<dynamic> users) {
   late List<User> userList = [];
   // userList.length = users.length;
 
