@@ -8,20 +8,21 @@ Future<List<User>> fetchUsers() async {
       await http.get(Uri.https("jsonplaceholder.typicode.com", "users"));
 
   if (response.statusCode == 200) {
+    // calls #santizeUsers passing a deserialized list of objects.
     return sanitizeUsers(jsonDecode(response.body));
   } else {
     throw Exception("Error getting users.");
   }
 }
 
-// create a function that accepts a List of objects and returns a mapped list of
+// create a function that accepts a deserialized List of objects and returns a mapped list of
 // user instances.
 List<User> sanitizeUsers(List<Map<String, dynamic>> users) {
   late List<User> userList = [];
-  userList.length = users.length;
+  // userList.length = users.length;
 
-  users.forEach((user) {
-    userList.add(User.fromJson(jsonDecode(user)));
+  users.forEach((userObject) {
+    userList.add(User.fromJson(userObject));
   });
 
   return userList;
