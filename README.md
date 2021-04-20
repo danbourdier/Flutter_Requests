@@ -2,6 +2,12 @@
 
 Project to simulate Flutter's fetch and FutureBuilder Widget. 
 
+## Subjects of Focus:
+    1. Async programming.
+    2. Suspense loading with Future Class and FutureBuilder Widget
+    3. API calls that return single objects vs lists of objects.
+    4. ListView Builder 
+
 ## Getting Started
     1. Clone repo
     2. flutter run
