@@ -18,12 +18,13 @@ class _MyAppState extends State<MyApp> {
   For some reason, late keyword throws when used.  
   */
   late Future<Album> futureAlbum;
-  late Future<User> futureUsers;
+  late Future<List<User>> futureUsers;
 
   @override
   void initState() {
     super.initState();
     futureAlbum = fetchAlbum();
+    futureUsers = fetchUsers();
   }
 
   @override
