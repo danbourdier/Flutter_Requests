@@ -34,6 +34,7 @@ class User {
   final String userName;
   final String userEmail;
 
+  // generic constructor
   User({required this.userId, required this.userName, required this.userEmail});
 
   factory User.fromJson(Map<String, dynamic> json) {
