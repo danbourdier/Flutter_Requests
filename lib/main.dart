@@ -37,14 +37,24 @@ class _MyAppState extends State<MyApp> {
             body: Center(
               // To test different endpoints, just switch any mention of Album class
               // and respective variables with User class data.
-              child: FutureBuilder<Album>(
-                future: futureAlbum, // this accepts our async result
+              child: FutureBuilder<List<User>>(
+                future: futureUsers, // this accepts our async result
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
-                    return Text(snapshot.data!.title);
+                    return ListView.builder(
+                      itemCount: snapshot.data!.length,
+                      itemBuilder: (context, index) {
+                        return Text(snapshot.data![index].userEmail);
+                      },
+                    );
                   } else if (snapshot.hasError) {
                     return Text("${snapshot.error}");
                   }
+                  // if (snapshot.hasData) {
+                  //   return Text(snapshot.data!.title);
+                  // } else if (snapshot.hasError) {
+                  //   return Text("${snapshot.error}");
+                  // }
 
                   return CircularProgressIndicator();
                 },
