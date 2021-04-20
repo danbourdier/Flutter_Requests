@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'custom_widgets/album_actions.dart';
+import 'custom_widgets/user_actions.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,6 +18,7 @@ class _MyAppState extends State<MyApp> {
   For some reason, late keyword throws when used.  
   */
   late Future<Album> futureAlbum;
+  late Future<User> futureUsers;
 
   @override
   void initState() {
